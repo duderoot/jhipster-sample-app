@@ -15,6 +15,15 @@
         vm.save = save;
         vm.operations = Operation.query();
 
+        vm.tinymceOptions = {
+                relative_urls : false,
+                remove_script_host : false,
+                toolbar: "removeformat",
+                plugins: "paste",
+                paste_remove_styles_if_webkit: true,
+                height : 300
+            };
+        
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
         });

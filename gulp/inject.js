@@ -29,9 +29,11 @@ function app() {
 }
 
 function vendor() {
+    var bower = bowerFiles();
+    bower.push (__dirname + "/../" + config.app + 'bower_components/tinymce/tinymce.js')
     var stream = gulp.src(config.app + 'index.html')
         .pipe(plumber({errorHandler: handleErrors}))
-        .pipe(inject(gulp.src(bowerFiles(), {read: false}), {
+        .pipe(inject(gulp.src(bower, {read: false}), {
             name: 'bower',
             relative: true
         }))

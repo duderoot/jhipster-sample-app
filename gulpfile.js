@@ -41,6 +41,12 @@ gulp.task('copy:languages', copy.languages);
 
 gulp.task('copy:fonts', copy.fonts);
 
+gulp.task('copy:tinymce', ['copy:tinymce_plugins', 'copy:tinymce_skins', 'copy:tinymce_themes']);
+
+gulp.task('copy:tinymce_plugins', copy.tinymce_plugins);
+gulp.task('copy:tinymce_skins', copy.tinymce_skins);
+gulp.task('copy:tinymce_themes', copy.tinymce_themes);
+
 gulp.task('copy:common', copy.common);
 
 gulp.task('copy:swagger', copy.swagger);
