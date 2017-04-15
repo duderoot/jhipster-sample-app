@@ -55,6 +55,11 @@
       "main": [
         "dist/css/bootstrap.css"
       ]
+    },
+    "tinymce": {
+      "main": [
+        "tinymce.js"
+      ]
     }
   },
   "resolutions": {

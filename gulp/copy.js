@@ -18,10 +18,7 @@ module.exports = {
     fonts: fonts,
     common: common,
     swagger: swagger,
-    images: images,
-    tinymce_plugins: tinymce_plugins,
-    tinymce_skins: tinymce_skins,
-    tinymce_themes: tinymce_themes
+    images: images
 }
 
 var yorc = require('../.yo-rc.json')['generator-jhipster'];
@@ -41,23 +38,6 @@ function languages() {
         .pipe(plumber({errorHandler: handleErrors}))
         .pipe(changed(config.app + 'i18n/'))
         .pipe(gulp.dest(config.app + 'i18n/'));
-}
-
-function tinymce_plugins() {
-    return gulp.src(config.bower + 'tinymce/plugins/**' )
-    .pipe(plumber({errorHandler: handleErrors}))
-    .pipe(gulp.dest(config.dist + '/app/plugins/'));
-}
-
-function tinymce_skins() {
-    return gulp.src(config.bower + 'tinymce/skins/**' )
-    .pipe(plumber({errorHandler: handleErrors}))
-    .pipe(gulp.dest(config.dist + '/app/skins/'));
-}
-function tinymce_themes() {
-    return gulp.src(config.bower + 'tinymce/themes/**' )
-        .pipe(plumber({errorHandler: handleErrors}))
-        .pipe(gulp.dest(config.dist + '/app/themes/'));
 }
 
 function fonts() {
